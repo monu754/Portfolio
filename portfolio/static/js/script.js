@@ -68,7 +68,6 @@ myDate.innerHTML = yes;
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
-  const toast = document.getElementById("toast");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -85,18 +84,29 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then((res) => {
       if (res.ok) {
-        toast.textContent = "✅ Message sent successfully!";
+        Swal.fire({
+          icon: "success",
+          title: "Message sent successfully!",
+          showConfirmButton: false,
+          timer: 3000
+        });
         form.reset();
       } else {
-        toast.textContent = "❌ Failed to send message.";
+        Swal.fire({
+          icon: "error",
+          title: "Failed to send message.",
+          showConfirmButton: false,
+          timer: 3000
+        });
       }
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 4000);
     })
     .catch(() => {
-      toast.textContent = "❌ Network error!";
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 4000);
+      Swal.fire({
+        icon: "error",
+        title: "Network error!",
+        showConfirmButton: false,
+        timer: 3000
+      });
     });
   });
 });
