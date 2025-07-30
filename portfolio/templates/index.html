@@ -9,9 +9,7 @@
     <meta name="title" content="Manotosh Mandal | Portfolio" />
     <meta name="description" content="This is the portfolio of Manotosh Mandal - a frontend developer, designer, and aspiring data scientist." />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../static/css/style.css" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="../static/css/utilities.css" />
     <link rel="stylesheet" href="{% static 'css/utilities.css' %}">
   </head>
   <body>
@@ -21,17 +19,17 @@
           <ul class="nav-menu">
             <li><a class="nav-link" href="#projects">PROJECTS</a></li>
             <li><a class="nav-link" href="#Contact">CONTACT</a></li>
-            <li><a class="nav-link" href="../static/BloggPage/blog.html" target="_blank">BLOG</a></li>
+            <a class="nav-link" href="{% static 'BloggPage/blog.html' %}" target="_blank">BLOG</a>
             <li>
-              <a class="nav-link btn btn-primary" href="../static/assets/MyResume.pdf" target="_blank">
+              <a class="nav-link btn btn-primary" href="{% static 'assets/MyResume.pdf' %}" target="_blank">
                 RESUME <i class="fas fa-arrow-right"></i>
               </a>
             </li>
             <div class="theme-switch">
               <input type="checkbox" id="switch" />
               <label class="toggle-icons" for="switch">
-                <img class="moon" src="../static/assets/moon.svg" />
-                <img class="sun" src="../static/assets/sun.svg" />
+                <img class="moon" src="{% static 'assets/moon.svg' %}" />
+                <img class="moon" src="{% static 'assets/sun.svg' %}" />
               </label>
             </div>
           </ul>
@@ -159,6 +157,14 @@
         {% endfor %}
       });
     </script>
+    {% endif %}
+
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
     {% endif %}
 
     <script src="{% static 'js/script.js' %}"></script>
