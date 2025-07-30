@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +10,9 @@
     <meta name="description" content="This is the portfolio of Manotosh Mandal - a frontend developer, designer, and aspiring data scientist." />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="../static/css/utilities.css" />
+    <link rel="stylesheet" href="{% static 'css/utilities.css' %}">
   </head>
   <body>
     <header id="hero">
