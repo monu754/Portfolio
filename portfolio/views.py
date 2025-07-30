@@ -18,6 +18,6 @@ def home(request):
                 messages.success(request, "Message sent successfully!")
             except:
                 messages.error(request, "Something went wrong while sending the message.")
-            return redirect('home')
+            return render(request, 'index.html', {'form': ContactForm()})
 
     return render(request, 'index.html', {'form': form})
