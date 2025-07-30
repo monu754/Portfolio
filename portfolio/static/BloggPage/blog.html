@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Page</title>
+  <link rel="stylesheet" href="bstyle.css" />
+  <link rel="stylesheet" href="../css/utilities.css" />
+</head>
+<body>
+  <header>
+    <h1>My Blogs</h1>
+    <div class="theme-switch">
+      <input type="checkbox" id="switch" />
+      <label class="toggle-icons" for="switch">
+        <img class="moon" src="../assets/moon.svg" />
+        <img class="sun" src="../assets/sun.svg" />
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="blogs">
+  <a href="blog1.html" class="blog" style="background-image: url('../assets/Blog1.png');">
+    <div class="overlay">
+      <div class="text left">
+        <span style="position: absolute; top: 20px; left: 30px; font-size: 1.1rem; font-weight: bold; background:none; color: #fff; padding: 0.3em 0.8em; border-radius: 6px;">Blog One</span>
+        <h2>Advanced Prompting Techniques</h2>
+      </div>
+    </div>
+  </a>
+
+  <a href="blog2.html" class="blog" style="background-image: url('../assets/Blog2.png');">
+    <div class="overlay">
+      <div class="text left">
+        <span style="position: absolute; top: 20px; left: 30px; font-size: 1.1rem; font-weight: bold; background: none; color: #fff; padding: 0.3em 0.8em; border-radius: 6px;">Blog Two</span>
+        <h2>The Future of Technology</h2>
+      </div>
+    </div>
+  </a>
+</section>
+
+  </main>
+
+  <script src="bscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manotosh Mandal | Portfolio</title>
+    <meta name="title" content="Manotosh Mandal | Portfolio" />
+    <meta name="description" content="This is the portfolio of Manotosh Mandal - a frontend developer, designer, and aspiring data scientist." />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/utilities.css" />
+  </head>
+  <body>
+    <header id="hero">
+      <nav class="navbar">
+        <div class="container">
+          <ul class="nav-menu">
+            <li><a class="nav-link" href="#projects">PROJECTS</a></li>
+            <li><a class="nav-link" href="#Contact">CONTACT</a></li>
+            <li><a class="nav-link" href="../static/BloggPage/blog.html" target="_blank">BLOG</a></li>
+            <li>
+              <a class="nav-link btn btn-primary" href="../static/assets/MyResume.pdf" target="_blank">
+                RESUME <i class="fas fa-arrow-right"></i>
+              </a>
+            </li>
+            <div class="theme-switch">
+              <input type="checkbox" id="switch" />
+              <label class="toggle-icons" for="switch">
+                <img class="moon" src="../static/assets/moon.svg" />
+                <img class="sun" src="../static/assets/sun.svg" />
+              </label>
+            </div>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </nav>
+
+      <section class="header-container">
+        <img class="profile-image" src="../static/assets/IMG-20250404-WA0046-removebg-preview.png" alt="Manotosh" />
+        <h1>Hi, I'm Manotosh Mandal</h1>
+        <div class="content-text">
+          <h2>Aspiring Data Scientist</h2>
+          <p>
+            Driven by a passion for solving real-world problems through data and innovation, I am constantly expanding my skills in machine learning. My ambition is to become a data scientist, where I can build intelligent systems that create meaningful impact on a global scale.
+          </p>
+        </div>
+        <a href="#Contact" class="btn btn-secondary">Connect With Me</a>
+      </section>
+    </header>
+
+    <section id="projects" class="project-container container">
+      <div class="division"></div>
+      <div class="content-text">
+        <h2>Projects</h2>
+        <p>Check out some of my personal and freelance projects</p>
+      </div>
+
+      <article class="project">
+        <div class="card">
+          <div class="project-info">
+            <div class="project-bio">
+              <h3>Delish Bites</h3>
+              <p>HTML, JavaScript, MYSQL</p>
+            </div>
+            <div class="project-link">
+              <a href="https://github.com/monu754/FoodDeliverySystem" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <a href="#" class="btn btn-secondary" target="_blank">See More <i class="fas fa-arrow-right"></i></a>
+    </section>
+
+    <section id="Contact" class="contact-section">
+      <div class="contact-text">
+        <h2>Contact Me</h2>
+      </div>
+      <div class="contact-container">
+        <div class="left-side">
+          <h2>Let's Connect</h2>
+          <p>Feel free to reach out to me for any opportunities, collaborations, or just to say hello!</p>
+          <div class="contact-details">
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email</strong><br />
+                <a href="mailto:m.mandal20048295@gmail.com">m.mandal20048295@gmail.com</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fab fa-linkedin"></i>
+              <div>
+                <strong>LinkedIn</strong><br />
+                <a href="https://linkedin.com/in/manotosh-mandal" target="_blank">linkedin.com/in/manotosh-mandal</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fab fa-github"></i>
+              <div>
+                <strong>GitHub</strong><br />
+                <a href="https://github.com/monu754" target="_blank">github.com/monu754</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-side">
+          <form id="contactForm" class="contact-form" method="POST">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" rows="5" placeholder="Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="social-icons-bottom">
+        <a href="https://linkedin.com/in/manotosh-mandal" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/monu754" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:m.mandal20048295@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="container">
+        <div class="social">
+          <a href="https://www.instagram.com/manotosh._.04/" target="_blank"><img src="../static/assets/insta-icon.png" alt="Instagram" /></a>
+          <a href="https://www.linkedin.com/in/manotosh-mandal" target="_blank"><img src="../static/assets/linkedin-icon.svg" alt="LinkedIn" /></a>
+          <a href="https://github.com/monu754/" target="_blank"><img src="../static/assets/github-icon.svg" alt="GitHub" /></a>
+        </div>
+        <p>Copyright &copy; Manotosh Mandal <span id="datee"></span>, All rights reserved</p>
+      </div>
+    </footer>
+
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {% if messages %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        {% for message in messages %}
+          Swal.fire({
+            icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% else %}info{% endif %}",
+            title: "{{ message|escapejs }}",
+            showConfirmButton: false,
+            timer: 3000
+          });
+        {% endfor %}
+      });
+    </script>
+    {% endif %}
+
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>
