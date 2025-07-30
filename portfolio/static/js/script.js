@@ -66,6 +66,7 @@ let myDate = document.querySelector("#datee");
 const yes = new Date().getFullYear();
 myDate.innerHTML = yes;
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
 
@@ -88,9 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
           icon: "success",
           title: "Message sent successfully!",
           showConfirmButton: false,
-          timer: 3000
+          timer: 2000
+        }).then(() => {
+          location.reload();  // ✅ This reloads the site
         });
-        form.reset();
       } else {
         Swal.fire({
           icon: "error",
