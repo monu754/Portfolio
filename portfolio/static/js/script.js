@@ -66,7 +66,6 @@ let myDate = document.querySelector("#datee");
 const yes = new Date().getFullYear();
 myDate.innerHTML = yes;
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
 
@@ -89,9 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
           icon: "success",
           title: "Message sent successfully!",
           showConfirmButton: false,
-          timer: 2000
-        }).then(() => {
-          location.reload();  // ✅ This reloads the site
+          timer: 2000,
+          willClose: () => {
+            // ✅ This triggers reload after SweetAlert closes
+            window.location.reload();
+          }
         });
       } else {
         Swal.fire({
