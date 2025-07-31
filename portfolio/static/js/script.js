@@ -33,7 +33,11 @@ if (currentTheme) {
   }
 }
 
-document.querySelector("#datee").innerHTML = new Date().getFullYear();
+const myDate = document.querySelector("#datee");
+if (myDate) {
+  myDate.textContent = new Date().getFullYear();
+}
+
 
 // ✅ Handle form with AJAX + SweetAlert
 document.addEventListener("DOMContentLoaded", () => {
