@@ -154,6 +154,8 @@ header {
   }
   .blogs{
     justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
   }
 
   .blog .overlay {
