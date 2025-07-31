@@ -152,10 +152,14 @@ header {
     visibility: visible !important;
     /* Always show overlay on mobile */
   }
-  .blog{
-    justify-content: center;
-    align-items: center;
-    margin-right: 0 auto;
+  .blogs {
+    padding: 1rem; /* Reduce padding on mobile */
+    grid-template-columns: 1fr; /* Single column on mobile */
+    justify-items: center; /* Ensure items are centered */
+  }
+  
+  .blog {
+    max-width: 100%; /* Allow full width within padding */
   }
 
   .blog .overlay {
