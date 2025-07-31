@@ -33,18 +33,20 @@ if (currentTheme) {
   }
 }
 
+// ✅ Safely set date text if element exists
 const myDate = document.querySelector("#datee");
 if (myDate) {
   myDate.textContent = new Date().getFullYear();
 }
 
-
 // ✅ Handle form with AJAX + SweetAlert
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
+  console.log("✅ DOM Loaded");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    console.log("🚀 Form submitted via JS");
 
     const formData = new FormData(form);
 
@@ -52,13 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
       method: "POST",
       headers: {
         "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value,
-        "X-Requested-With": "XMLHttpRequest", // important to identify AJAX in views.py
+        "X-Requested-With": "XMLHttpRequest",
       },
       body: formData,
     })
     .then(response => response.json())
     .then(data => {
-      console.log("🔄 Response data:", data);
+      console.log("📦 JSON Response:", data);
       if (data.success) {
         Swal.fire({
           icon: "success",
