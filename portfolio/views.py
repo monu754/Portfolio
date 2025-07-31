@@ -1,6 +1,6 @@
 from django.core.mail import send_mail
-from django.http import JsonResponse
-from django.shortcuts import render,redirect
+from django.contrib import messages
+from django.shortcuts import render, redirect
 from .forms import ContactForm
 
 def home(request):
@@ -15,11 +15,8 @@ def home(request):
                     form.cleaned_data['email'],
                     ['m.mandal20048295@gmail.com']
                 )
-                if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-                    return JsonResponse({'success': True})
-                else:
-                    return redirect('home')  # fallback for non-AJAX
+                messages.success(request, "Message sent successfully!")
             except:
-                return JsonResponse({'success': False}, status=500)
-
+                messages.error(request, "Something went wrong while sending the message.")
+            return redirect('home')  # Redirect to clear POST data
     return render(request, 'index.html', {'form': form})

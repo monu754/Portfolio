@@ -33,59 +33,7 @@ if (currentTheme) {
   }
 }
 
-// ✅ Safely set date text if element exists
 const myDate = document.querySelector("#datee");
 if (myDate) {
   myDate.textContent = new Date().getFullYear();
 }
-
-// ✅ Handle form with AJAX + SweetAlert
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contactForm");
-  console.log("✅ DOM Loaded");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    console.log("🚀 Form submitted via JS");
-
-    const formData = new FormData(form);
-
-    fetch("/", {
-      method: "POST",
-      headers: {
-        "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value,
-        "X-Requested-With": "XMLHttpRequest",
-      },
-      body: formData,
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log("📦 JSON Response:", data);
-      if (data.success) {
-        Swal.fire({
-          icon: "success",
-          title: "Message sent successfully!",
-          showConfirmButton: false,
-          timer: 3000
-        }).then(() => {
-          window.location.reload();
-        });
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Something went wrong.",
-          showConfirmButton: true
-        });
-      }
-    })
-    .catch(error => {
-      console.error("❌ Fetch Error:", error);
-      Swal.fire({
-        icon: "error",
-        title: "Request failed.",
-        text: error.toString(),
-        confirmButtonText: "OK"
-      });
-    });
-  });
-});
