@@ -52,3 +52,48 @@ if (currentTheme) {
 let myDate = document.querySelector("#datee");
 const yes = new Date().getFullYear();
 myDate.innerHTML = yes;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: {
+        "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value,
+      },
+      body: formData,
+    })
+    .then(response => {
+      if (response.ok) {
+        Swal.fire({
+          icon: "success",
+          title: "Message sent successfully!",
+          showConfirmButton: false,
+          timer: 3000
+        }).then(() => {
+          window.location.reload(); // reload only after success
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Something went wrong.",
+          showConfirmButton: true
+        });
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Request failed.",
+        text: error.toString(),
+        confirmButtonText: "OK"
+      });
+    });
+  });
+});

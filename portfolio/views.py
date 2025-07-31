@@ -1,7 +1,7 @@
 from django.core.mail import send_mail
-from django.shortcuts import render, redirect
+from django.http import JsonResponse
+from django.shortcuts import render
 from .forms import ContactForm
-from django.contrib import messages
 
 def home(request):
     form = ContactForm()
@@ -15,9 +15,8 @@ def home(request):
                     form.cleaned_data['email'],
                     ['m.mandal20048295@gmail.com']
                 )
-                messages.success(request, "Message sent successfully!")
+                return JsonResponse({'success': True})
             except:
-                messages.error(request, "Something went wrong while sending the message.")
-            return redirect('home')  # Important for reload
+                return JsonResponse({'success': False}, status=500)
 
     return render(request, 'index.html', {'form': form})
