@@ -262,80 +262,63 @@ body {
 @media (max-width: 768px) {
 }
 
-@media (max-width: 670px) {
-  .navbar .nav-menu {
-    position: fixed;
-    right: -100vw;
-    top: 4.5rem;
+/* Make contact section and container responsive on mobile */
+@media screen and (max-width: 768px) {
+  .contact-section {
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .contact-container {
     flex-direction: column;
-    width: calc(80% - 10px);
-    transition: 0.3s;
-    box-shadow: var(--shadow);
-    padding: 2rem;
-    border-radius: 5px;
-    align-items: flex-start;
+    gap: 20px;
+    padding: 12px;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
-
-  .navbar .btn {
-    margin: 0;
-    margin-top: 1rem;
-  }
-
-  .nav-menu.active {
-    right: 20px;
-  }
-
-  .nav-menu .nav-link {
-    font-size: 0.9rem;
-    margin: 0 0.2rem;
-  }
-
-  .nav-menu li {
-    margin-bottom: 0.5rem;
+  .left-side,
+  .right-side {
+    min-width: 0;
     width: 100%;
   }
-
-  .nav-menu .btn {
+  .contact-form input,
+  .contact-form textarea {
     width: 100%;
-    text-align: center;
-    margin-top: 0.5rem;
+    box-sizing: border-box;
+    font-size: 1rem;
   }
-
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    padding: 0.2rem 0.4rem;
-  }
-
-  .hamburger.active {
-    border: 1px dotted gray;
-  }
-
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
-
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+  .contact-form button {
+    width: 100%;
+    align-self: stretch;
   }
 }
 
-@media (max-width: 600px) {
-  .project {
-    display: grid;
-    grid-template-columns: 1fr;
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .contact-section {
+    padding: 8px;
   }
-
-  .header-container .btn {
-    border-radius: 5px;
-    width: 80%;
+  .contact-container {
+    padding: 6px;
+    gap: 10px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 10px;
   }
 }
 
+/* Ensure form fields never overflow */
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  max-width: 100%;
+  box-sizing: border-box;
+}
 
 .contact-section {
   max-width: 1000px;
