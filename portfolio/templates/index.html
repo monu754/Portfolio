@@ -149,6 +149,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         {% for message in messages %}
+          console.log("Message exists: {{ message|escapejs }}");
           Swal.fire({
             icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% else %}info{% endif %}",
             title: "{{ message|escapejs }}",
@@ -159,5 +160,6 @@
       });
     </script>
     {% endif %}
+
   </body>
 </html>

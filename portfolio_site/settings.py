@@ -136,3 +136,7 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS',cast=bool)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  # Use App Password from Step 2
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
