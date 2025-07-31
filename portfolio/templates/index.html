@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manotosh Mandal | Portfolio</title>
     <meta name="title" content="Manotosh Mandal | Portfolio" />
+    <meta http-equiv="Cache-Control" content="no-store">
     <meta name="description" content="This is the portfolio of Manotosh Mandal - a frontend developer, designer, and aspiring data scientist." />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -149,14 +150,15 @@
               icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% else %}info{% endif %}",
               title: "{{ message|escapejs }}",
               showConfirmButton: false,
-              timer: 3000
+              timer: 3000,
             });
           {% endfor %}
         });
       </script>
       {% endif %}
 
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}?v=20250730"></script>
+
   
 
   </body>
