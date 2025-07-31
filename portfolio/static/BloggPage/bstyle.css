@@ -152,6 +152,9 @@ header {
     visibility: visible !important;
     /* Always show overlay on mobile */
   }
+  .blogs{
+    justify-content: center;
+  }
 
   .blog .overlay {
     opacity: 1 !important;
